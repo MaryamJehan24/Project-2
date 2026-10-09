@@ -1,0 +1,936 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fcfaf7;
+    color: #26352f;
+    line-height: 1.7;
+}
+
+/* CSS SELECTORS: element, class, ID, group */
+
+h1, h2, h3, p {
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: 34px;
+    line-height: 1.25;
+    color: #203d32;
+}
+
+p {
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================
+   2. COLORS, BACKGROUNDS AND BOX MODEL
+   ========================================= */
+
+:root {
+    --primary: #28624c;
+    --dark: #203d32;
+    --light: #f0f4ed;
+    --accent: #dba96b;
+    --white: #ffffff;
+    --text: #58645d;
+}
+
+.section-padding {
+    padding: 80px 8%;
+}
+
+.section-label {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   3. NAVIGATION BAR AND CSS IMAGE SPRITES
+   ========================================= */
+
+header {
+    background-color: var(--white);
+    border-bottom: 1px solid #e8e9e4;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: auto;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Image sprite: one image, different background positions */
+
+.sprite {
+    display: inline-block;
+    width: 46px;
+    height: 44px;
+    background-image: url("https://www.w3schools.com/css/img_navsprites.gif");
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+.sprite-home {
+    background-position: 0 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links > a,
+.dropdown > a {
+    color: #39483f;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+/* Pseudo-class */
+
+.nav-links a:hover,
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+/* Button styling: borders, padding and radius */
+
+.nav-button,
+.primary-button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 22px;
+    border: 2px solid var(--primary);
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover,
+.primary-button:hover {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+/* =========================================
+   4. DROPDOWN MENU AND POSITIONING
+   ========================================= */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background-color: var(--white);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 200;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light);
+}
+
+/* Show dropdown on hover and keyboard focus */
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+/* =========================================
+   5. HERO: HEIGHT, WIDTH, BACKGROUNDS, TEXT
+   ========================================= */
+
+.hero {
+    min-height: 580px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    background-color: #e6eee5;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(18, 43, 34, 0.86),
+            rgba(18, 43, 34, 0.18)
+        ),
+        url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1800");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero .subtitle {
+    color: #f4d5a9;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.15;
+    margin: 20px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 span {
+    color: #f2c78f;
+}
+
+.hero-description {
+    color: #f2f4f0;
+    font-size: 17px;
+    max-width: 500px;
+    margin-bottom: 28px;
+}
+
+.primary-button {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #203d32;
+    outline: 2px solid transparent;
+    outline-offset: 4px;
+}
+
+.primary-button:focus {
+    outline-color: var(--white);
+}
+
+/* =========================================
+   6. INTRODUCTION AND TEXT ALIGNMENT
+   ========================================= */
+
+.intro {
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.intro-text {
+    max-width: 700px;
+    margin: 15px auto 0;
+    color: var(--text);
+}
+
+/* =========================================
+   7. FLEXBOX CONTAINER AND FLEX ITEMS
+   ========================================= */
+
+.destinations {
+    background-color: var(--light);
+}
+
+.text-link {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+/* Flex container */
+
+.destination-container {
+    display: flex;
+
+    /* Flex direction */
+    flex-direction: row;
+
+    /* Flex wrapping */
+    flex-wrap: wrap;
+
+    /* Flex flow shorthand can replace
+       flex-direction + flex-wrap */
+    flex-flow: row wrap;
+
+    /* Horizontal distribution */
+    justify-content: space-between;
+
+    /* Vertical alignment */
+    align-items: stretch;
+
+    /* Space between wrapped rows */
+    align-content: flex-start;
+
+    gap: 25px;
+}
+
+.destination-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(31, 58, 45, 0.07);
+
+    /* Flex item sizing */
+    flex: 1 1 250px;
+    min-width: 0;
+
+    /* Positioning */
+    position: relative;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Pseudo-class */
+
+.destination-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(31, 58, 45, 0.15);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+
+    /* Opacity transition */
+    opacity: 0.95;
+    transition: opacity 0.3s ease;
+}
+
+.destination-card:hover img {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 24px;
+}
+
+/* Pseudo-element */
+
+.card-content h3::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent);
+    margin-top: 8px;
+}
+
+.card-content p {
+    color: var(--text);
+}
+
+.destination-tag {
+    display: inline-block;
+    background-color: #eaf1e8;
+    color: var(--primary);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   8. IMAGE GALLERY AND INLINE-BLOCK
+   ========================================= */
+
+.gallery-section {
+    background-color: var(--white);
+}
+
+/* Float and clear demonstration */
+
+.gallery-section h2 {
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 18px;
+    align-items: stretch;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+
+    /* Flexbox sizing */
+    flex: 1 1 220px;
+
+    /* Float fallback demonstration */
+    float: left;
+
+    /* Outline is visible when focused */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* Positioned caption overlay */
+
+.gallery-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+
+    color: var(--white);
+    font-size: 17px;
+    font-weight: bold;
+    padding: 25px 15px 15px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.8)
+    );
+}
+
+/* Clear float */
+
+.gallery::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* =========================================
+   9. PACKAGES: FLEX GROW, SHRINK, BASIS
+   ========================================= */
+
+.packages-section {
+    background-color: #f4f0e8;
+    text-align: center;
+}
+
+.packages-section > h2 {
+    margin-bottom: 40px;
+}
+
+.package-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    gap: 25px;
+}
+
+.package-card {
+    background-color: var(--white);
+    border: 1px solid #e6e4dc;
+    border-radius: 15px;
+    padding: 32px 25px;
+    text-align: left;
+
+    /* Flex shorthand:
+       grow = 1, shrink = 1, basis = 250px */
+    flex: 1 1 250px;
+
+    max-width: 350px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+/* Featured card */
+
+.package-card.featured {
+    border: 2px solid var(--primary);
+    transform: translateY(-8px);
+}
+
+.popular-label {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.package-price {
+    color: var(--primary);
+    font-size: 30px;
+    font-weight: bold;
+    margin: 12px 0 20px;
+}
+
+.package-price span {
+    font-size: 12px;
+    color: var(--text);
+    font-weight: normal;
+}
+
+/* List styling */
+
+.package-card ul {
+    list-style-type: none;
+    margin: 10px 0 25px;
+}
+
+/* Pseudo-element custom bullet */
+
+.package-card li::before {
+    content: "✓";
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.package-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eeeeea;
+    font-size: 14px;
+}
+
+/* Flex grow pushes buttons towards the bottom */
+
+.package-card ul {
+    flex-grow: 1;
+}
+
+.package-button {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+}
+
+.package-button:hover {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+/* =========================================
+   10. TABLE, BORDERS AND OVERFLOW
+   ========================================= */
+
+.info-section {
+    background-color: var(--white);
+}
+
+.info-section h2 {
+    margin-bottom: 25px;
+}
+
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dce4dc;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: bold;
+}
+
+th, td {
+    padding: 16px;
+    border-bottom: 1px solid #e3e7e2;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f5ef;
+}
+
+tr:hover {
+    background-color: #e6eee5;
+}
+
+/* =========================================
+   11. CONTACT FORM AND BUTTONS
+   ========================================= */
+
+.contact-section {
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+}
+
+.contact-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.contact-content h2 {
+    color: var(--white);
+}
+
+.contact-content > p:not(.section-label) {
+    color: #d5e0d8;
+}
+
+.newsletter {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.newsletter input {
+    flex: 1 1 250px;
+    min-width: 0;
+    padding: 14px 18px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font: inherit;
+    outline: none;
+}
+
+.newsletter input:focus {
+    border-color: var(--accent);
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.newsletter button {
+    flex: 0 0 auto;
+    padding: 14px 25px;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    background-color: var(--accent);
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: transparent;
+    color: var(--white);
+}
+
+/* =========================================
+   12. FOOTER, LINKS AND DISPLAY
+   ========================================= */
+
+.footer {
+    background-color: #172d24;
+    color: var(--white);
+    padding: 45px 8% 20px;
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    color: #f2c78f;
+    margin-bottom: 10px;
+}
+
+.footer-content > p {
+    color: #c5d1c9;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: #e0e8e1;
+    font-size: 14px;
+}
+
+.copyright {
+    border-top: 1px solid #3a4e42;
+    padding-top: 20px;
+    margin-top: 25px;
+    color: #c5d1c9;
+    font-size: 12px;
+}
+
+/* =========================================
+   13. COMBINATORS AND EXTRA SELECTORS
+   ========================================= */
+
+/* Descendant combinator */
+.navbar .logo {
+    letter-spacing: 0.3px;
+}
+
+/* Child combinator */
+.package-card > h3 {
+    color: var(--dark);
+}
+
+/* Adjacent sibling combinator */
+.section-label + h2 {
+    margin-top: 0;
+}
+
+/* General sibling combinator */
+.section-label ~ .intro-text {
+    line-height: 1.9;
+}
+
+/* First child and last child pseudo-classes */
+.nav-links a:first-child {
+    font-weight: 600;
+}
+
+.footer-links a:last-child {
+    margin-right: 0;
+}
+
+/* =========================================
+   14. RESPONSIVE FLEXBOX
+   ========================================= */
+
+/* Tablet screens */
+
+@media screen and (max-width: 900px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 70px 7%;
+    }
+
+    .section-padding {
+        padding: 60px 6%;
+    }
+
+    .destination-container {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .destination-card {
+        flex: 1 1 280px;
+    }
+
+    .package-container {
+        justify-content: center;
+    }
+
+    .package-card {
+        flex: 1 1 280px;
+    }
+
+    .package-card.featured {
+        transform: none;
+    }
+}
+
+/* Mobile screens */
+
+@media screen and (max-width: 600px) {
+
+    h2 {
+        font-size: 27px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .nav-button {
+        padding: 9px 18px;
+    }
+
+    .hero {
+        min-height: 470px;
+        padding: 55px 7%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .section-padding {
+        padding: 50px 6%;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .destination-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .destination-card {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .destination-card img {
+        height: 220px;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .gallery-item {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+
+    .gallery-item img {
+        height: 240px;
+    }
+
+    .package-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .package-card {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .newsletter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        width: 100%;
+        flex: 1 1 auto;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
+```

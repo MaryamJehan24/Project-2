@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust | Travel the World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar and Image Sprite -->
+    <header id="home">
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                <span class="sprite sprite-home"></span>
+                Wanderlust
+            </a>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#packages">Packages</a>
+
+                <!-- Dropdown Menu -->
+                <div class="dropdown">
+                    <a href="#gallery">Explore ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#gallery">Photo Gallery</a>
+                        <a href="#packages">Travel Packages</a>
+                        <a href="#contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#contact" class="nav-button">Book a Trip</a>
+
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="subtitle">YOUR NEXT ADVENTURE STARTS HERE</p>
+
+            <h1>Discover the World,<br>
+                <span>One Journey at a Time.</span>
+            </h1>
+
+            <p class="hero-description">
+                Explore beautiful places, discover new cultures,
+                and make memories that last forever.
+            </p>
+
+            <a href="#destinations" class="primary-button">
+                Explore Destinations →
+            </a>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro section-padding">
+        <p class="section-label">WHY TRAVEL WITH US?</p>
+
+        <h2>Your Journey, Our Passion</h2>
+
+        <p class="intro-text">
+            We help you discover breathtaking destinations with
+            affordable packages, comfortable stays, and unforgettable
+            experiences. Your dream vacation is just one click away.
+        </p>
+    </section>
+
+    <!-- Destinations: Flexbox Container and Flex Items -->
+    <section id="destinations" class="section-padding destinations">
+        <div class="section-heading">
+            <div>
+                <p class="section-label">FIND YOUR HAPPY PLACE</p>
+                <h2>Popular Destinations</h2>
+            </div>
+
+            <a href="#gallery" class="text-link">View Gallery →</a>
+        </div>
+
+        <div class="destination-container">
+
+            <article class="destination-card">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800"
+                     alt="Snow-covered mountains beneath the stars">
+
+                <div class="card-content">
+                    <span class="destination-tag">Adventure</span>
+                    <h3>Northern Pakistan</h3>
+                    <p>Discover majestic mountains and peaceful valleys.</p>
+                    <a href="#packages" class="text-link">Explore →</a>
+                </div>
+            </article>
+
+            <article class="destination-card">
+                <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800"
+                     alt="Beautiful Mediterranean coastal village">
+
+                <div class="card-content">
+                    <span class="destination-tag">Relaxation</span>
+                    <h3>Santorini, Greece</h3>
+                    <p>Enjoy blue waters, white houses, and golden sunsets.</p>
+                    <a href="#packages" class="text-link">Explore →</a>
+                </div>
+            </article>
+
+            <article class="destination-card">
+                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800"
+                     alt="Modern skyscrapers in Dubai">
+
+                <div class="card-content">
+                    <span class="destination-tag">City Life</span>
+                    <h3>Dubai, UAE</h3>
+                    <p>Experience luxury shopping and incredible architecture.</p>
+                    <a href="#packages" class="text-link">Explore →</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section id="gallery" class="section-padding gallery-section">
+        <p class="section-label">COLLECT MOMENTS</p>
+        <h2>Postcards from Around the World</h2>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800"
+                     alt="Mountain peaks">
+                <div class="gallery-caption">Mountain Escapes</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800"
+                     alt="Tropical beach">
+                <div class="gallery-caption">Beach Days</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800"
+                     alt="Night sky">
+                <div class="gallery-caption">Magical Nights</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800"
+                     alt="Lake surrounded by mountains">
+                <div class="gallery-caption">Peaceful Lakes</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Packages -->
+    <section id="packages" class="section-padding packages-section">
+        <p class="section-label">TRAVEL MADE EASY</p>
+        <h2>Choose Your Adventure</h2>
+
+        <div class="package-container">
+
+            <div class="package-card">
+                <h3>Weekend Escape</h3>
+                <p class="package-price">$199 <span>/ person</span></p>
+                <ul>
+                    <li>2 nights accommodation</li>
+                    <li>Breakfast included</li>
+                    <li>Guided sightseeing</li>
+                </ul>
+                <a href="#contact" class="package-button">Choose Package</a>
+            </div>
+
+            <div class="package-card featured">
+                <span class="popular-label">MOST POPULAR</span>
+                <h3>Dream Vacation</h3>
+                <p class="package-price">$499 <span>/ person</span></p>
+                <ul>
+                    <li>5 nights accommodation</li>
+                    <li>Meals and transport</li>
+                    <li>Three guided tours</li>
+                </ul>
+                <a href="#contact" class="package-button">Choose Package</a>
+            </div>
+
+            <div class="package-card">
+                <h3>Luxury Journey</h3>
+                <p class="package-price">$899 <span>/ person</span></p>
+                <ul>
+                    <li>7 nights luxury stay</li>
+                    <li>Private transport</li>
+                    <li>Personal travel guide</li>
+                </ul>
+                <a href="#contact" class="package-button">Choose Package</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Travel Information Table -->
+    <section class="section-padding info-section">
+        <p class="section-label">PLAN YOUR NEXT TRIP</p>
+        <h2>Quick Travel Guide</h2>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Destination</th>
+                    <th>Best Season</th>
+                    <th>Suggested Stay</th>
+                    <th>Budget</th>
+                </tr>
+
+                <tr>
+                    <td>Northern Pakistan</td>
+                    <td>Summer</td>
+                    <td>5 Days</td>
+                    <td>$250</td>
+                </tr>
+
+                <tr>
+                    <td>Santorini</td>
+                    <td>Spring</td>
+                    <td>4 Days</td>
+                    <td>$600</td>
+                </tr>
+
+                <tr>
+                    <td>Dubai</td>
+                    <td>Winter</td>
+                    <td>3 Days</td>
+                    <td>$450</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Newsletter and Contact -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="contact-content">
+            <p class="section-label">LET'S PLAN SOMETHING BEAUTIFUL</p>
+            <h2>Your Next Chapter Awaits.</h2>
+            <p>
+                Subscribe for travel inspiration, destination guides,
+                and special offers.
+            </p>
+
+            <form class="newsletter">
+                <input type="email" placeholder="Enter your email address"
+                       aria-label="Email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="#home" class="footer-logo">Wanderlust.</a>
+
+            <p>Making the world feel a little closer.</p>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#packages">Packages</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <p class="copyright">
+            © 2026 Wanderlust Travel. Made with love for explorers.
+        </p>
+    </footer>
+
+</body>
+</html>
+```
